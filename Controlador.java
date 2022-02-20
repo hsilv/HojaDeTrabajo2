@@ -1,12 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Driver Program que implementa la secuencia de una calculadora Posfix que lee un txt
+@author Sebastian Silva
+@date 18/02/2022
  */
 package posfixcalc;
 
 import java.io.*;
-import java.util.ArrayList;
 
 /**
  *
@@ -15,14 +14,14 @@ import java.util.ArrayList;
 public class Controlador {
 
     public static void main(String[] args) {
+    	//Definicion de la ruta del archivo con las operaciones y creacion de la calculadora
         String path = "F:\\Hola.txt";
-        String texto = "";
         CalculadoraPosFix calc = new CalculadoraPosFix();
         
         try{
+        	//Lectura por linea del archivo y evaluacion del resultado de la misma.
             FileReader fr = new FileReader(path);
             BufferedReader br = new BufferedReader(fr);
-            String temp = "";
             String bfRead;
             while((bfRead = br.readLine()) != null){
                 System.out.println(calc.Evaluate(bfRead));
